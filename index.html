@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HOVIL DENFO — Scroll Product Experience</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;background:#f4f1eb;color:#111;overflow-x:hidden}html{scroll-behavior:auto}
+.nav{position:fixed;z-index:100;inset:0 0 auto;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;mix-blend-mode:multiply}.logo{font-size:24px;font-weight:800;letter-spacing:.16em}.navlinks{display:flex;gap:30px}.navlinks a{color:#111;text-decoration:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.bar{position:fixed;right:22px;top:50%;transform:translateY(-50%);height:180px;width:2px;background:#c9c6bf;z-index:110}.bar i{display:block;width:100%;height:0;background:#111}
+.section{height:100vh;min-height:720px;position:relative;overflow:hidden;display:flex;align-items:center;padding:0 8vw}.s1{background:#f0ede6}.s2{background:#151515;color:#f4f1eb}.s3{background:#dce7e7}.s4{background:#e8dfd2}.s5{background:#f0eee8}.s6{background:#1c1c1c;color:#f4f1eb}.s7{background:#dfe6df}.s8{background:#101010;color:#f4f1eb}
+.copy{z-index:10;position:relative;max-width:560px}.eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.58;margin-bottom:20px}h1,h2{margin:0;line-height:.84;letter-spacing:-.07em;font-weight:700}h1{font-size:clamp(65px,10vw,155px)}h2{font-size:clamp(55px,8vw,125px)}p{max-width:430px;font-size:16px;line-height:1.65;opacity:.68;margin:25px 0}.btn{display:inline-block;border:1px solid currentColor;padding:14px 22px;color:inherit;text-decoration:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.word{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(150px,25vw,360px);line-height:1;font-weight:800;letter-spacing:-.1em;opacity:.055;white-space:nowrap}.small{position:absolute;z-index:1;right:-5vw;bottom:2vh;font-size:clamp(100px,17vw,240px);font-weight:800;letter-spacing:-.09em;opacity:.05}
+/* One fixed product, like the reference: it stays on the screen while the document scrolls. */
+#productLayer{position:fixed;z-index:60;left:50%;top:50%;width:min(300px,27vw);height:min(590px,72vh);transform:translate(-50%,-50%);pointer-events:none;will-change:transform,opacity;filter:drop-shadow(0 24px 20px rgba(0,0,0,.10));}
+#product{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:18px;filter:drop-shadow(0 34px 24px rgba(0,0,0,.26));will-change:transform}
+#halo{position:absolute;width:220px;height:220px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:rgba(255,255,255,.3);filter:blur(70px);z-index:-1}
+.caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:20;font-size:9px;letter-spacing:.26em;text-transform:uppercase;opacity:.45;white-space:nowrap}
+.notes{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.pill{border:1px solid currentColor;border-radius:30px;padding:8px 12px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;opacity:.65}
+@media(max-width:700px){.nav{height:62px;padding:0 22px}.navlinks{display:none}.logo{font-size:20px}.section{padding:0 24px;min-height:760px}.copy{max-width:88vw}.word{font-size:100px}#productLayer{width:220px;height:470px;top:54%}.bar{right:12px;height:120px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="logo">HOVIL</div><div class="navlinks"><a href="#story">Story</a><a href="#scent">Scent</a><a href="#collection">Collection</a></div></header>
+<div class="bar"><i id="barFill"></i></div>
+
+<!-- IMPORTANT: this image is FIXED. It does not belong to any section. Scroll position controls it. -->
+<div id="productLayer"><div id="halo"></div><img id="product" src="DENFO_URBAN_NIGHT_TRANSPARENT.png" alt="HOVIL DENFO Urban Night"></div>
+
+<main>
+<section class="section s1" id="story"><div class="word">DENFO</div><div class="copy"><div class="eyebrow">HOVIL / DENFO</div><h1>MAKE<br>AN<br>IMPRESSION.</h1><p>The bottle stays with the scroll and travels through the entire page.</p><a class="btn" href="#s2">Scroll to explore</a></div><div class="caption">Scroll ↓</div></section>
+<section class="section s2" id="s2"><div class="word">URBAN</div><div class="copy"><div class="eyebrow">01 / Urban Night</div><h2>OWN<br>THE<br>NIGHT.</h2><p>As you scroll, the same bottle moves to a completely different place.</p><div class="notes"><span class="pill">Bold</span><span class="pill">Modern</span><span class="pill">Confident</span></div></div></section>
+<section class="section s3" id="scent"><div class="word">SCENT</div><div class="copy"><div class="eyebrow">02 / Fragrance</div><h2>DEPTH<br>IN<br>MOTION.</h2><p>The product crosses the viewport instead of staying in one fixed center position.</p><div class="notes"><span class="pill">Top</span><span class="pill">Heart</span><span class="pill">Base</span></div></div></section>
+<section class="section s4"><div class="small">MOVE</div><div class="copy"><div class="eyebrow">03 / Experience</div><h2>ONE<br>BOTTLE.<br>MANY<br>MOMENTS.</h2><p>Left, right, up, down, rotate and scale — all driven by scroll progress.</p></div></section>
+<section class="section s5"><div class="word">DENFO</div><div class="copy"><div class="eyebrow">04 / Signature</div><h2>LEAVE<br>A<br>TRACE.</h2><p>The bottle remains visible while the background and content continue changing.</p></div></section>
+<section class="section s6" id="collection"><div class="word">HOVIL</div><div class="copy"><div class="eyebrow">05 / Collection</div><h2>FIND<br>YOUR<br>SIGNATURE.</h2><p>Blue EDGE · Deep Teal FLUX · Red ELVOR · Amber OUD NOIR · Smoky Gray URBAN NIGHT</p><a class="btn" href="#end">View collection</a></div></section>
+<section class="section s7"><div class="copy"><div class="eyebrow">06 / Urban Night</div><h2>DESIGNED<br>TO BE<br>SEEN.</h2><p>Another movement point: the bottle changes direction and scale again.</p></div></section>
+<section class="section s8" id="end"><div class="copy"><div class="eyebrow">HOVIL / DENFO</div><h2>EVERY<br>SCENT<br>TELLS A<br>STORY.</h2><p>The scroll journey ends here.</p></div></section>
+</main>
+<script>
+const layer=document.getElementById('productLayer');
+const product=document.getElementById('product');
+const bar=document.getElementById('barFill');
+let target=0,current=0;
+// Multiple exact movement positions across the WHOLE document.
+// p = total page scroll progress, x/y = viewport offset from center, r = rotation, s = scale.
+const path=[
+ {p:0.00,x:24,y:0,r:-5,s:.88},
+ {p:0.09,x:25,y:-7,r:7,s:1.00},
+ {p:0.18,x:-24,y:4,r:14,s:.86},
+ {p:0.28,x:-25,y:-8,r:-10,s:1.00},
+ {p:0.38,x:24,y:6,r:-16,s:.90},
+ {p:0.48,x:25,y:-5,r:9,s:1.04},
+ {p:0.58,x:-24,y:7,r:17,s:.86},
+ {p:0.68,x:-25,y:-6,r:-9,s:1.00},
+ {p:0.78,x:24,y:3,r:-14,s:.92},
+ {p:0.88,x:-20,y:-4,r:8,s:1.00},
+ {p:1.00,x:0,y:0,r:0,s:.82}
+];
+function lerp(a,b,t){return a+(b-a)*t}
+function getState(p){for(let i=0;i<path.length-1;i++){let a=path[i],b=path[i+1];if(p>=a.p&&p<=b.p){let t=(p-a.p)/(b.p-a.p);t=t*t*(3-2*t);return{x:lerp(a.x,b.x,t),y:lerp(a.y,b.y,t),r:lerp(a.r,b.r,t),s:lerp(a.s,b.s,t)}}}return path[path.length-1]}
+function readScroll(){const max=document.documentElement.scrollHeight-innerHeight;target=max?scrollY/max:0;bar.style.height=(target*100)+'%'}
+function frame(){current+=(target-current)*.16;const k=getState(current);const mobile=innerWidth<=700;const mx=mobile?.70:1;layer.style.transform=`translate(calc(-50% + ${k.x*mx}vw),calc(-50% + ${k.y}vh))`;product.style.transform=`rotate(${k.r}deg) scale(${k.s})`;requestAnimationFrame(frame)}
+addEventListener('scroll',readScroll,{passive:true});addEventListener('resize',readScroll);readScroll();frame();
+</script>
+</body></html>
